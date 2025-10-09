@@ -16,17 +16,11 @@
    2️⃣  PAGE TYPOGRAPHY (Title, h3‑block, speech image)
    ================================================================ */
 .Title{
-    margin:10vh;                 /* exactly the original spacing */
-    font-size:2rem;              /* default – same visual size you used */
-    font-weight:600;
-    text-align:center ;
+  margin:10vh;                 /* exactly the original spacing */
+  font-size:2rem;              /* default – same visual size you used */
+  font-weight:600;
+  text-align:center;
 }
-
-
-#head-title{
-  margin-left: 38vw;
-}
-
 .h3Div{
   margin:5vh 0 0 5vw;          /* original 5 vh top, 5 vw left */
   font-size:inherit;           /* keep the default size (≈ 1.17 rem) */
@@ -40,7 +34,7 @@
   float:right;
   border-radius:3vh;
   margin-right:10vw;
-  margin-top:20vh;
+  margin-top:10vh;
 }
 
 /* ================================================================
