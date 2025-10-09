@@ -1,0 +1,163 @@
+/* ================================================================
+   1️⃣  GLOBAL SETTINGS (unchanged)
+   ================================================================ */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*,
+*::before,
+*::after{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+  font-family:'Poppins',sans-serif;
+}
+
+/* ================================================================
+   2️⃣  PAGE TYPOGRAPHY (Title, h3‑block, speech image)
+   ================================================================ */
+.Title{
+    margin:10vh;                 /* exactly the original spacing */
+    font-size:2rem;              /* default – same visual size you used */
+    font-weight:600;
+    text-align:center ;
+}
+
+
+#head-title{
+  margin-left: 38vw;
+}
+
+.h3Div{
+  margin:5vh 0 0 5vw;          /* original 5 vh top, 5 vw left */
+  font-size:inherit;           /* keep the default size (≈ 1.17 rem) */
+}
+.h3Div h3{
+  margin:0.8rem 0;
+}
+
+/* speech illustration – the “old” float‑right style */
+.speech{
+  float:right;
+  border-radius:3vh;
+  margin-right:10vw;
+  margin-top:20vh;
+}
+
+/* ================================================================
+   3️⃣  HIGHLIGHTS – two‑column (English | Tamil)
+   ================================================================ */
+.highlights{
+  display:flex;
+  gap:var(--gap);
+  margin:2rem 5vw;
+  position:relative;               /* vertical divider */
+}
+.highlights-en,
+.highlights-ta{
+  flex:1;
+}
+.highlights-en p,
+.highlights-ta p{
+  margin:0 0 .6rem;
+  line-height:1.5;
+}
+.highlights::after{
+  content:"";
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:50%;
+  width:1px;
+  background:#e0e0e0;
+}
+@media (max-width:600px){
+  .highlights{
+    flex-direction:column;
+  }
+  .highlights::after{display:none;}
+}
+
+/* ================================================================
+   4️⃣  COMPETITION GRID (same sizing you had originally)
+   ================================================================ */
+.grid{
+  margin:5vh 20vw;               /* original side gutters */
+  display:grid;
+  gap:1rem;
+  grid-template-columns:repeat(auto-fit,minmax(var(--card-min),var(--card-max)));
+}
+.card{
+  background:#ffffff;
+  padding:18px;
+  border-radius:12px;
+  box-shadow:0 8px 10px rgba(15,30,60,.08);
+  height:250px;                  /* fixed height – original */
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  transition:transform .18s ease,box-shadow .18s ease;
+  border:1px solid rgba(15,23,42,.03);
+}
+.card:hover,
+.card:focus{
+  transform:translateY(-6px);
+  box-shadow:0 14px 30px rgba(2,6,23,.12);
+}
+.comp-name{
+  font-size:3vh;                 /* original size */
+  font-weight:bold;
+  margin:10px 0 6px;
+  color:#0b1220;
+}
+.Img{
+  border-radius:3vh;
+}
+
+/* ================================================================
+   5️⃣  MOBILE‑FIRST ADJUSTMENTS (keep the original look)
+   ================================================================ */
+@media (max-width:600px){
+  /* Title – original margin → 6 vh 5 vw 3 vh, smaller font */
+  .Title{
+    margin:6vh 5vw 3vh;
+    font-size:1.1rem;
+    text-align:center;
+  }
+
+  /* h3 block – original margin → 4 vh 5 vw, slightly smaller font */
+  .h3Div{
+    margin:4vh 5vw;
+    font-size:0.8rem;
+    line-height:1.4;
+    text-align:center;
+  }
+
+  /* speech image – drop the float, centre it */
+  .speech{
+    display:block;
+    float:none;
+    margin:4vh auto;
+    max-width:90%;
+    border-radius:8px;
+  }
+
+  /* grid – shrink side gutters, force one column */
+  .grid{
+    margin:4vh 5vw;
+    grid-template-columns:1fr;   /* one column on mobile */
+    gap:1.2rem;
+  }
+  .card{
+    height:auto;                 /* let the content decide */
+    padding:12px;
+  }
+  .comp-name{
+    font-size:1.2rem;           /* smaller on mobile */
+    margin:0.8rem 0 0.4rem;
+  }
+  .Img{
+    max-height:180px;
+    object-fit:cover;
+    border-radius:8px;
+  }
+}

@@ -1,0 +1,200 @@
+/* ================================================================
+   0️⃣ GLOBAL RESET & FONT
+   ================================================================ */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap');
+
+*,
+*::before,
+*::after{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+  font-family:'Poppins',sans-serif;
+}
+
+/* ================================================================
+   1️⃣ PAGE CONTAINER (white background, comfortable max‑width)
+   ================================================================ */
+html,body{
+  background:#fff;               /* keep the page white */
+  color:#222;
+}
+.poetic-page{
+  max-width:1200px;
+  margin:0 auto;
+  padding:2rem 5vw;               /* default gutter on left/right */
+}
+
+/* ================================================================
+   2️⃣ TOP SECTION – left text / right image (desktop)
+   ================================================================ */
+.poetic-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:2rem;                      /* space between text and image */
+}
+
+/* left column – takes all space that is NOT used by the picture */
+.poetic-left{
+  flex:1 1 0;                    /* grows, but never shrinks below its content */
+}
+
+/* right column – the register illustration */
+.register-img{
+  flex:0 0 30%;                  /* roughly 30 % of the width */
+  max-width:350px;
+  height:auto;
+  border-radius:8px;
+  box-shadow:0 8px 12px rgba(0,0,0,.15);
+}
+
+/* --------------------------------------------------------------
+   Mobile – stack the two columns and make the image full width
+   -------------------------------------------------------------- */
+@media (max-width:600px){
+  .poetic-top{
+    flex-direction:column;
+  }
+  .register-img{
+    width:100%;
+    max-width:none;
+    margin:2rem 0;
+    align-self:center;
+  }
+}
+
+/* ================================================================
+   3️⃣ TITLES (the orange‑accent headings)
+   ================================================================ */
+.Title{
+  margin:2rem 0 1rem;
+  font-size:1.9rem;
+  font-weight:800;
+  color:#ff6600;
+  position:relative;
+}
+.Title::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-6px;
+  width:70px;
+  height:3px;
+  background:#ff6600;
+}
+
+/* centre titles on tiny screens */
+@media (max-width:600px){
+  .Title{
+    text-align:center;
+    font-size:1.7rem;
+  }
+}
+
+/* ================================================================
+   4️⃣ INFO BLOCK – the group of <h3> items (card look)
+   ================================================================ */
+.h3Div{
+  display:flex;
+  flex-wrap:wrap;
+  gap:1.2rem;
+  margin:1.5rem 0 2rem;
+}
+.h3Div h3{
+  flex:1 1 260px;                /* each block keeps a minimum width */
+  background:rgba(0,0,0,.05);
+  padding:0.7rem 0.9rem;
+  border-left:4px solid #ff6600;
+  border-radius:4px;
+  font-size:0.95rem;
+  line-height:1.4;
+  color:#222;
+}
+
+/* ================================================================
+   5️⃣ DESCRIPTION PARAGRAPHS
+   ================================================================ */
+.description{
+  max-width:80vw;
+  margin:0 0 2rem 20vh;
+  font-size:0.97rem;
+  line-height:1.6;
+  color:#444;
+}
+@media (max-width:600px){
+  .description{
+    margin:0 auto 2rem;
+    max-width:100%;
+    text-align:center;
+  }
+}
+
+/* ================================================================
+   6️⃣ CALL‑TO‑ACTION BUTTONS
+   ================================================================ */
+.register-button{
+  display:inline-flex;
+  align-items:center;
+  gap:0.6rem;
+  background:linear-gradient(45deg,#ffdd57,#ff9f1c);
+  color:#1e1e2f;
+  padding:0.85rem 1.3rem;
+  border-radius:8px;
+  font-weight:600;
+  text-decoration:none;
+  transition:transform .2s,box-shadow .2s;
+  margin:1rem 0;
+}
+.register-button:hover{
+  transform:translateY(-3px);
+  box-shadow:0 8px 12px rgba(0,0,0,.25);
+}
+.google-icon{
+  width:24px;
+  height:24px;
+}
+
+/* centre button containers on mobile */
+@media (max-width:600px){
+  .poetry-link,
+  .poetry-link1{
+    text-align:center;
+  }
+}
+
+/* ================================================================
+   7️⃣ NOTE (red highlighted line)
+   ================================================================ */
+.note{
+  font-size:0.98rem;
+  max-width:80vw;
+  margin:2rem auto 0;
+  line-height:1.6;
+  color:#222;
+}
+.note span{
+  color:#d60000;
+  font-weight:800;
+  font-size:1.05rem;
+}
+
+/* ================================================================
+   8️⃣ RESPONSIVE TIGHTENING (smaller paddings on very small screens)
+   ================================================================ */
+@media (max-width:600px){
+  .poetic-page{
+    padding:1.5rem 2vw;
+  }
+}
+
+/* ================================================================
+   9️⃣ OPTIONAL FADE‑IN (keeps the page smooth on load)
+   ================================================================ */
+.poetic-page{
+  opacity:0;
+  animation:fadeIn 0.5s ease-out forwards;
+}
+@keyframes fadeIn{
+  to{opacity:1;}
+}

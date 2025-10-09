@@ -1,165 +1,440 @@
-/* Only PC/Desktop styles, no mobile responsiveness */
+/* ================================================================
+   1️⃣ GLOBAL / BRAND SETTINGS
+   ================================================================ */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-.header-card {
-  display: flex;
-  align-items: center;
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-  padding: 16px 20px;
-  max-width: 700px;
-  margin: 24px auto;
-  gap: 18px;
+*,
+*::before,
+*::after{
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+:root{
+  --gap:1rem;
+  --card-min:180px;
+  --card-max:1fr;
+  --bg:#f6f8fb;
+  --card-bg:#ffffff;
+  --accent:#0f62fe;
+  --muted:#6b7280;
+  --radius:12px;
+  --shadow:0 8px 10px rgba(15,30,60,.08);
 }
 
-.header-logo {
-  width: 110px;
-  height: 110px;
-  object-fit: contain;
+/* --------------------------------------------------------------
+   2️⃣ HEADER
+   -------------------------------------------------------------- */
+.header-bar{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#fff;
+  padding:16px 0 8px;
+  gap:18px;
+}
+.header-logo{
+  width:110px;
+  height:110px;
+  object-fit:contain;
+}
+.header-center{
+  text-align:center;
+  min-width:500px;
+}
+.tamil-header{color:#d90429;font-size:2.2rem;font-weight:700;margin-bottom:2px;}
+.eng-header{color:#0a2342;font-size:2.1rem;font-weight:700;margin-bottom:2px;}
+.tamil-subheader{color:#222;font-size:1.2rem;font-weight:600;margin-bottom:2px;}
+.eng-subheader{color:#444;font-size:1rem;margin-bottom:2px;}
+.aicte{color:#222;font-size:1rem;margin-top:4px;}
+.tnea{color:#d90429;font-weight:bold;}
+.aicte-code{color:#d90429;font-weight:bold;}
+
+/* --------------------------------------------------------------
+   3️⃣ MAIN MENU (desktop)
+   -------------------------------------------------------------- */
+.main-menu{
+  background:#fff;
+  margin-top:3vh;
+  padding-bottom:12px;
+}
+.main-menu ul{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  list-style:none;
+  gap:12px;
+  margin:0;
+  padding:0;
+}
+.main-menu li{font-size:1.1rem;}
+.main-menu a{
+  text-decoration:none;
+  color:#0a2342;
+  font-weight:500;
+  transition:color .2s;
 }
 
-.header-content {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-  align-items: center;
+/* underline effect – add class .menu-link if you want it */
+.main-menu a.menu-link{
+  position:relative;
+  padding:4px 0;
+}
+.main-menu a.menu-link::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-2px;
+  width:0;
+  height:2px;
+  background:#d90429;
+  transition:width .25s ease-out;
+}
+.main-menu a.menu-link:hover::after,
+.main-menu a.menu-link:focus::after,
+.main-menu a.menu-link.active::after{
+  width:100%;
+}
+.main-menu a.menu-link:hover,
+.main-menu a.menu-link:focus{
+  color:#d90429;
 }
 
-.header-center {
-  text-align: center;
-  min-width: 500px;
+/* --------------------------------------------------------------
+   4️⃣ BANNER
+   -------------------------------------------------------------- */
+.main-banner{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  margin:24px 0;
+}
+.banner-img{
+  width:100vw;
+  height:40vh;
+  border-radius:8px;
+  box-shadow:0 2px 8px rgba(0,0,0,.07);
 }
 
-.header-line {
-  line-height: 1.2;
+/* --------------------------------------------------------------
+   5️⃣ ABOUT SECTION
+   -------------------------------------------------------------- */
+.about-section{
+  margin:24px 10vw;
+}
+.about-section h2{
+  color:#000;
+  font-size:1.8rem;
+  font-weight:700;
+  margin-bottom:12px;
+}
+.about-section h4{
+  color:#333;
+  font-size:1rem;
+  font-weight:500;
+  line-height:1.6;
+  margin-bottom:16px;
+}
+.about-section p{
+  border:1px solid #e7e7e7;
+  width:50vw;
 }
 
-.tamil-red {
-  color: #d90429;
-  font-weight: bold;
-  font-size: 1rem;
+/* --------------------------------------------------------------
+   6️⃣ COMPETITION GRID
+   -------------------------------------------------------------- */
+.head{
+  color:blue;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin-top:5vh;
+}
+.grid{
+  margin:5vh 20vw;
+  display:grid;
+  gap:var(--gap);
+  grid-template-columns:repeat(auto-fit,minmax(var(--card-min),var(--card-max)));
+  align-items:start;
+}
+.card{
+  background:var(--card-bg);
+  padding:18px;
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  height:250px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  transition:transform .18s ease,box-shadow .18s ease;
+  border:1px solid rgba(15,23,42,.03);
+}
+.card:hover,
+.card:focus{
+  transform:translateY(-6px);
+  box-shadow:0 14px 30px rgba(2,6,23,.12);
+}
+.comp-name{
+  font-size:3vh;
+  font-weight:bold;
+  margin:10px 0 6px;
+  color:#0b1220;
+}
+.Img{border-radius:3vh;}
+
+
+
+/* --------------------------------------------------------------
+   8️⃣ HAMBURGER ICON (mobile only)
+   -------------------------------------------------------------- */
+.hamburger{
+  position:fixed;
+  top:16px;
+  right:16px;
+  width:32px;
+  height:28px;
+  display:none;               /* becomes flex on ≤600 px */
+  flex-direction:column;
+  justify-content:space-between;
+  background:transparent;
+  border:none;
+  cursor:pointer;
+  z-index:20;
+}
+.hamburger span{
+  display:block;
+  height:4px;
+  background:#0a2342;
+  border-radius:2px;
+  transition:transform .25s ease,opacity .25s ease;
+}
+.hamburger.open span:nth-child(1){transform:translateY(10px) rotate(45deg);}
+.hamburger.open span:nth-child(2){opacity:0;}
+.hamburger.open span:nth-child(3){transform:translateY(-10px) rotate(-45deg);}
+
+/* --------------------------------------------------------------
+   9️⃣ NAV LIST – base (desktop = horizontal)
+   -------------------------------------------------------------- */
+.nav-list{
+  display:flex;
+  flex-direction:row;          /* desktop layout */
+  list-style:none;
+  margin:0;
+  padding:0;
 }
 
-.eng-bold {
-  color: #0a2342;
-  font-weight: bold;
-  font-size: 1.1rem;
+/* --------------------------------------------------------------
+   🔟 MOBILE PANEL – thin 250 px drawer (≤ 600 px)
+   -------------------------------------------------------------- */
+@media (max-width:600px){
+  /* ----- show the hamburger button ----- */
+  .hamburger{display:flex;}
+
+  /* ----- sliding drawer ----- */
+  .nav-list{
+    position:fixed;
+    top:0;
+    right:-260px;               /* starts hidden off‑screen */
+    width:250px;                /* thin drawer */
+    height:100vh;
+    background:#fff;
+    flex-direction:column;     /* vertical stack */
+    align-items:flex-start;
+    gap:16px;
+    padding:80px 16px 16px;     /* space for header */
+    box-shadow:-4px 0 12px rgba(0,0,0,.12);
+    transition:right .35s ease;
+    z-index:15;
+    overflow-x:hidden;         /* stops the off‑screen part from causing scroll */
+  }
+  .main-menu.nav-open .nav-list{right:0;}
+
+  .nav-list a{
+    display:block;
+    width:100%;
+    font-size:1.2rem;
+    color:#0a2342;
+    text-decoration:none;
+    padding:0.5rem 0;
+  }
+  .nav-list a:hover,
+  .nav-list a:focus{color:#d90429;}
+
+  /* hide any other <ul> that isn’t the drawer */
+  .main-menu ul:not(.nav-list){display:none;}
+
+  /* ----- header – stacked for mobile ----- */
+  .header-bar{
+    flex-direction:column;
+    gap:12px;
+    padding:12px 0;
+  }
+  .header-logo{width:80px;height:80px;}
+  .header-center{
+    min-width:auto;
+    text-align:center;
+    margin:0 5vw;
+  }
+  .tamil-header{font-size:1.8rem;}
+  .eng-header{font-size:1.7rem;}
+  .tamil-subheader{font-size:1rem;}
+  .eng-subheader{font-size:0.9rem;}
+  .aicte{font-size:0.9rem;}
+
+  /* ----- banner ----- */
+  .main-banner{margin:16px 0;}
+  .banner-img{
+    width:95vw;
+    height:auto;
+    max-height:250px;
+  }
+
+  /* ----- about section ----- */
+  .about-section{
+    margin:20px 5vw;
+    text-align:center;
+  }
+  .about-section h2{font-size:1.5rem;}
+  .about-section h4{font-size:.95rem;line-height:1.5;}
+  .about-section p{
+    width:100%;
+    margin:0 auto;
+  }
+
+  /* ----- section title ----- */
+  .head{font-size:1.2rem;margin-top:3vh;text-align:center;}
+
+  /* ----- grid ----- */
+  .grid{
+    margin:4vh 5vw;
+    grid-template-columns:repeat(auto-fill,minmax(140px,1fr));
+  }
+  .card{
+    padding:12px;
+    height:auto;
+  }
+  .comp-name{
+    font-size:2.5vh;
+    margin:8px 0 4px;
+  }
+  .Img{
+    border-radius:8px;
+    max-width:100%;
+    height:auto;
+  }
+
+  
+
+  /* ----- page‑specific overrides (Linguistic, etc.) ----- */
+  .Title{
+    margin:6vh 5vw 3vh;
+    font-size:1.1rem;
+    text-align:center;
+  }
+  .h3Div{
+    margin:4vh 5vw;
+    font-size:0.8rem;
+    line-height:1.4;
+    text-align:center;
+  }
+  .h3Div h3{margin:0.8rem 0;}
+  .description{
+    margin:0 5vw;
+    font-size:0.8rem;
+    line-height:1.6;
+  }
+  .speech{
+    display:block;
+    margin:4vh 2vh;
+    max-width:90%;
+    border-radius:8px;
+  }
+  .grid{
+    margin:4vh 5vw;
+    grid-template-columns:1fr;
+    gap:1.2rem;
+  }
+  .card{
+    height:auto;
+    padding:12px;
+  }
+  .comp-name{
+    font-size:1.2rem;
+    margin:0.8rem 0 0.4rem;
+  }
+  .Img{
+    max-height:180px;
+    object-fit:cover;
+    border-radius:8px;
+  }
 }
 
-.tamil-black {
-  color: #222;
-  font-size: 0.95rem;
-  font-weight: bold;
+/* --------------------------------------------------------------
+   1️⃣1️⃣ TABLET (601 – 768 px) – keep original tweaks
+   -------------------------------------------------------------- */
+@media (min-width:601px) and (max-width:768px){
+  .header-bar{
+    flex-direction:column;
+    gap:14px;
+  }
+  .header-logo{
+    width:90px;
+    height:90px;
+  }
+  .tamil-header{font-size:2rem;}
+  .eng-header{font-size:1.9rem;}
+  .tamil-subheader{font-size:1.1rem;}
+  .eng-subheader{font-size:1rem;}
+
+  .main-menu ul{
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:20px;
+  }
+
+  .banner-img{
+    width:95vw;
+    height:auto;
+    max-height:300px;
+  }
+
+  .about-section{margin:24px 6vw;}
+  .grid{margin:5vh 8vw;}
+  .footer{padding:35px 20px 20px;}
 }
 
-.eng-normal {
-  color: #444;
-  font-size: 0.9rem;
+/* --------------------------------------------------------------
+   1️⃣2️⃣ PAGE‑SPECIFIC STYLES (register button, poetry, etc.)
+   -------------------------------------------------------------- */
+.register-button{
+  margin:5vh 0 0 20vw;
+  display:inline-flex;
+  align-items:center;
+  padding:10px 16px;
+  background:#4285f4;
+  color:#fff;
+  text-decoration:none;
+  font-weight:bold;
+  border-radius:8px;
+  transition:background .3s;
+  font-size:16px;
+}
+.register-button:hover{background:#3367d6;}
+.google-icon{height:24px;width:24px;margin-right:10px;}
+.poetry-link1{
+  position:relative;
+  bottom:11vh;
+  right:-30vw;
+}
+.register{
+  height:35vh;
+  position:absolute;
+  top:30vh;
+  right:5vw;
 }
 
-.info {
-  font-size: 0.9rem;
-  margin-top: 2px;
-}
-
-.tnea {
-  color: #d90429;
-  font-weight: bold;
-}
-
-.aicte-code {
-  color: #d90429;
-  font-weight: bold;
-}
-
-.tamil-header {
-  color: #d90429;
-  font-size: 2.2rem;
-  font-weight: 700;
-  margin-bottom: 2px;
-  font-family: 'Noto Sans Tamil', Arial, sans-serif;
-}
-
-.eng-header {
-  color: #0a2342;
-  font-size: 2.1rem;
-  font-weight: 700;
-  margin-bottom: 2px;
-  font-family: 'Roboto', Arial, sans-serif;
-}
-
-.tamil-subheader {
-  color: #222;
-  font-size: 1.2rem;
-  font-weight: 600;
-  margin-bottom: 2px;
-  font-family: 'Noto Sans Tamil', Arial, sans-serif;
-}
-
-.eng-subheader {
-  color: #444;
-  font-size: 1rem;
-  margin-bottom: 2px;
-  font-family: 'Roboto', Arial, sans-serif;
-}
-
-.aicte {
-  color: #222;
-  font-size: 1rem;
-  margin-top: 4px;
-}
-
-.header-bar {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #fff;
-  padding: 16px 0 8px 0;
-  gap: 18px;
-}
-
-.main-menu {
-  background: #fff;
-  margin-top: 3vh;
-  padding: 0 0 12px 0;
-}
-
-.main-menu ul {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  gap: 32px;
-}
-
-.main-menu li {
-  font-size: 1.1rem;
-}
-
-.main-menu a {
-  text-decoration: none;
-  color: #0a2342;
-  font-weight: 500;
-  transition: color 0.2s;
-}
-
-.main-menu a:hover {
-  color: #d90429;
-}
-
-.main-banner {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 24px 0;
-}
-
-.banner-img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+/* --------------------------------------------------------------
+   13️⃣ SAFETY NET – never allow horizontal overflow anywhere
+   -------------------------------------------------------------- */
+html, body{
+  overflow-x:hidden;
 }
