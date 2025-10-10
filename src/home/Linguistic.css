@@ -85,7 +85,7 @@
   padding:18px;
   border-radius:12px;
   box-shadow:0 8px 10px rgba(15,30,60,.08);
-  height:250px;                  /* fixed height – original */
+  height:280px;                  /* fixed height – original */
   display:flex;
   flex-direction:column;
   justify-content:center;

@@ -197,3 +197,54 @@ html,body{
 @keyframes fadeIn{
   to{opacity:1;}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.event-details {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.event-box {
+  flex: 1;
+  min-width: 250px;
+  background-color: #f9f9f9;
+  padding: 15px 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.event-box h1 {
+  font-size: 1.4rem;
+  color: #222;
+  margin-bottom: 10px;
+}
+
+.event-box h3 {
+  color: #333;
+  margin: 5px 0;
+}
+
+@media (max-width: 768px) {
+  .event-details {
+    flex-direction: column;
+  }
+}

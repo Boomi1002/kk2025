@@ -3,10 +3,10 @@ import Header from './header';
 import Footer from './footer';
 import './Poetic.css';
 
-/* images */
-// import register from '../images/register.jpg';
 
-const Poetic = (props) => {
+
+
+const ShortStory = (props) => {
   return (
     <>
       <Header />
@@ -104,4 +104,4 @@ const Poetic = (props) => {
   );
 };
 
-export default Poetic;
+export default ShortStory;

@@ -12,7 +12,7 @@ import speech1  from '../images/speech1.jpg';
 import speech   from '../images/speech.jpg';
 import comment  from '../images/commentry.jpg';
 
-const Linguistic = () => {
+const Logical = () => {
   const navigate = useNavigate();
 
   return (
@@ -132,7 +132,7 @@ const Linguistic = () => {
 
         {/* Commentary */}
         <button className="card" role="listitem"
-        onClick={() => navigate('/Commentary')}
+        onClick={() => navigate('/poetic')}
         >
           <div className="comp-name">
             Commentary Contest <br />
@@ -148,4 +148,4 @@ const Linguistic = () => {
   );
 };
 
-export default Linguistic;
+export default Logical;
