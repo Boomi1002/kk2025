@@ -9,6 +9,10 @@
   box-sizing:border-box;
   font-family:'Poppins',sans-serif;
 }
+html {
+  scroll-behavior: smooth;
+}
+
 :root{
   --gap:1rem;
   --card-min:180px;
@@ -20,6 +24,8 @@
   --radius:12px;
   --shadow:0 8px 10px rgba(15,30,60,.08);
 }
+
+
 
 /* --------------------------------------------------------------
    2️⃣ HEADER
@@ -62,12 +68,12 @@
   justify-content:center;
   align-items:center;
   list-style:none;
-  gap:12px;
+  gap:20px;
   margin:0;
   padding:0;
 }
 .main-menu li{font-size:1.1rem;}
-.main-menu a{
+.main-menu a , .dropdown-title{
   text-decoration:none;
   color:#0a2342;
   font-weight:500;
@@ -98,6 +104,49 @@
 .main-menu a.menu-link:focus{
   color:#d90429;
 }
+
+/* Parent li relative */
+.dropdown {
+  position: relative;
+}
+
+
+/* Dropdown hidden by default */
+.dropdown-content {
+  display: none !important;          /* hidden initially */
+  position: absolute;     /* float over other items */
+  top: 100%;              /* directly below parent */
+  left: 0;
+  flex-direction: column; /* stack items vertically */
+  min-width: 180px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  border-radius: 6px;
+  z-index: 100;
+  padding: 5px 0;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-content {
+  display: flex !important;
+}
+
+/* Links styling */
+.dropdown-content li {
+  list-style: none;
+}
+
+.dropdown-content li a {
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #333;
+}
+
+.dropdown-content li a:hover {
+  background-color: #e0e0e0;
+}
+
 
 /* --------------------------------------------------------------
    4️⃣ BANNER

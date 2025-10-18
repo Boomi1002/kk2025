@@ -21,8 +21,8 @@ function Footer() {
             <div className='footer-logo-para'>
                 <p>UCET Melpakkam, Tindivanam – 604 307</p>
                 <p>📞 Office: 04147-224477</p>
-                <p>✉ Email: deanoffice.ucet@gmail.com</p>
-                <p>📞 TNEA Enquiry: 04147-224477</p>
+                <p>✉ Email: kkucet25@gmail.com</p>
+                <p>📞 Organizer Number:+91 9791194793</p>
             </div>
           </div>
 
@@ -34,13 +34,14 @@ function Footer() {
               <li><a href="#about">About Us</a></li>
               <li><a href="#events">Events</a></li>
               <li><a href="/">Judges</a></li>
-              <li><a href="/">Gallery</a></li>
+              <li><a href="/gallery">Gallery</a></li>
+              
             </ul>
           </div>
 
           {/* Location */}
           <div className="footer-section map">
-            <h4>Location</h4>
+            <h4 className='H4'>Location</h4>
             {/* Placeholder Google Maps embed; replace with exact embed from Google Maps for UCET Melpakkam */}
             <iframe
               title="ucet-map"
