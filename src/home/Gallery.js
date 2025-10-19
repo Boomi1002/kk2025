@@ -19,11 +19,11 @@ import Pic9  from '../event/pic9.jpg';
 import Pic10 from '../event/pic10.jpg';
 import Pic11 from '../event/pic11.jpg';
 import Pic12 from '../event/pic12.jpg';
-// import vid1 from '../event/video.mp4';
-// import vid2 from '../event/vid1.mp4';
-// import vid3 from '../event/vid2.mp4';
-// import vid4 from '../event/vid3.mp4';
-// import vid5 from '../event/vid4.mp4';
+import vid1 from '../event/video.mp4';
+import vid2 from '../event/vid1.mp4';
+import vid3 from '../event/vid2.mp4';
+import vid4 from '../event/vid3.mp4';
+import vid5 from '../event/vid4.mp4';
 
 
 
@@ -53,11 +53,11 @@ const Gallery = () => {
 
   // Video list
   const videos = [
-    // // vid1,
-    // vid2,
-    // vid3,
-    // vid4,
-    // vid5
+    vid1,
+    vid2,
+    vid3,
+    vid4,
+    vid5
   ];
 
   // State for lightbox
